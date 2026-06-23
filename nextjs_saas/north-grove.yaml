@@ -1,0 +1,43 @@
+guided:
+  category: saas
+  framework: nextjs
+template: stripe/nextjs-saas
+variant: north-grove
+default: false
+variant_description: Vercel • Render Postgres • Clerk
+install_command: npm install
+ref: 14feb287cb32695c92334d3fbe84c4fac1ee4b37
+repo: https://github.com/stripe/stripe-build-templates/tree/main/nextjs_saas_north-grove
+metadata:
+  name: Next.js SaaS Render Starter
+  description: Subscription SaaS with Clerk auth, Render Postgres, and Vercel hosting
+  owner: stripe
+services:
+  - vercel/project
+  - clerk/auth
+  - render/postgres
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  render/postgres:
+    free_lowest_cost:
+      instance_type: free
+    starter_paid:
+      instance_type: basic-256mb
+    higher_scale:
+      instance_type: basic-4gb

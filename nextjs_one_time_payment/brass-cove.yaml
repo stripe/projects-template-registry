@@ -1,0 +1,39 @@
+guided:
+  category: one_time_payment
+  framework: nextjs
+template: stripe/nextjs-one-time-payment
+variant: brass-cove
+default: false
+variant_description: Netlify • Render Postgres • Clerk
+install_command: npm install
+ref: 14feb287cb32695c92334d3fbe84c4fac1ee4b37
+repo: https://github.com/stripe/stripe-build-templates/tree/main/nextjs_one_time_payment_brass-cove
+metadata:
+  name: Next.js One-time Payment Render Netlify Starter
+  description: One-time payment app with Clerk auth, Render Postgres, and Netlify hosting
+  owner: stripe
+services:
+  - netlify/project
+  - clerk/auth
+  - render/postgres
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  render/postgres:
+    free_lowest_cost:
+      instance_type: free
+    starter_paid:
+      instance_type: basic-256mb
+    higher_scale:
+      instance_type: basic-4gb

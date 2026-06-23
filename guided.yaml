@@ -1,0 +1,13 @@
+# Guided mode shows these categories first, in this order.
+# Use one of these options for your "category" key, and it will be shown in the guided mode. 
+# If you do not use one of these options, it will be shown in the guided mode as "Something else".
+categories:
+  - key: saas
+    label: SaaS App
+    description: Subscription-based application with recurring billing.
+  - key: one_time_payment
+    label: One-time payment app
+    description: Sell products or services with a single checkout.
+  - key: static_site
+    label: Static site
+    description: Marketing page, docs, or content site with Stripe checkout.

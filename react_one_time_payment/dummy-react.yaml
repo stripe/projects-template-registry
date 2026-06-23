@@ -1,0 +1,33 @@
+guided:
+  category: one_time_payment
+  framework: react
+
+template: example/react-one-time-payment
+variant: dummy-react
+default: true
+variant_description: React • Dummy Template
+install_command: npm install
+
+metadata:
+  name: React One-time Payment Dummy
+  description: Dummy manifest for testing the guided framework flow.
+  owner: local
+  tags:
+    - React
+    - One-time Payment
+    - Dummy
+
+repo: https://github.com/example/dummy-templates/tree/main/react_one_time_payment_dummy-react
+ref: aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa
+
+services:
+  - vercel/project
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy

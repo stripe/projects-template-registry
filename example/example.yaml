@@ -1,0 +1,72 @@
+# Copy this file when creating a new template manifest.
+guided:
+  # Choose which guided category this template appears under in `init guided`.
+  category: saas
+  # Pick the framework filter key this template should match in guided mode.
+  framework: nextjs
+
+# Use one shared template id for all variants of the same starter.
+template: stripe/nextjs-saas
+# Give this concrete variant its own stable id.
+variant: amber-fox
+# Set this to `true` for the variant the CLI should recommend first.
+default: true
+# Write the short stack summary shown in the variant picker.
+variant_description: Vercel • Neon • Clerk
+# Optionally run one shell command after files are copied into the new project.
+install_command: npm install
+
+metadata:
+  # Show this human-friendly name in browse results and confirmation cards.
+  name: Next.js SaaS Starter
+  # Explain in one line what the starter gives the user.
+  description: Subscription SaaS with auth, database, and billing
+  # Name the team or person maintaining this template.
+  owner: stripe
+  # Add optional search keywords to improve browse and search results.
+  tags:
+    - Billing
+    - SaaS
+    - Next.js
+
+# Point to the repo directory the CLI should copy from.
+repo: https://github.com/stripe/stripe-build-templates/tree/main/nextjs_saas_amber-fox
+# Pin the exact commit so users get a reproducible template.
+ref: 14feb287cb32695c92334d3fbe84c4fac1ee4b37
+
+# List the provider services the provisioning pipeline should provision.
+services:
+  - vercel/project
+  - clerk/auth
+  - neon/postgres
+
+# Optionally list the commands the CLI should print after setup finishes.
+next_steps:
+  # Use a short heading so users know what this command is for.
+  - label: Run locally
+    # Print the exact command the user should run next.
+    command: npm run dev
+  # Add as many labeled next-step commands as you want.
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+
+# Optionally override which provider plan each traffic tier should pick.
+tier_plans:
+  # Use the provisioned service slug as the top-level key.
+  vercel/project:
+    # Use a string when the provider expects a named plan id.
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch

@@ -1,0 +1,36 @@
+guided:
+  category: saas
+  framework: nextjs
+template: stripe/nextjs-saas
+variant: silver-orbit
+default: false
+variant_description: Netlify • Neon • Clerk
+install_command: npm install
+ref: 14feb287cb32695c92334d3fbe84c4fac1ee4b37
+repo: https://github.com/stripe/stripe-build-templates/tree/main/nextjs_saas_silver-orbit
+metadata:
+  name: Next.js SaaS Netlify Starter
+  description: Subscription SaaS with Clerk auth, Neon Postgres, and Netlify hosting
+  owner: stripe
+services:
+  - netlify/project
+  - clerk/auth
+  - neon/postgres
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
