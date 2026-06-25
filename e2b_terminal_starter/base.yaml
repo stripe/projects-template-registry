@@ -20,7 +20,7 @@ metadata:
     - sqlite
 
 repo: https://github.com/e2b-dev/e2b-terminal-starter
-ref: 7e5887f39840c9d95a370dc5426367cae6e89302
+ref: 37f87021b1d11e80c0cb377d7a6e5b0220e7f736
 
 services:
   - e2b/sandbox
