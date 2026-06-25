@@ -11,7 +11,7 @@ variant: teal-otter
 # Set this to `true` for the variant the CLI should recommend first.
 default: true
 # Write the short stack summary shown in the variant picker.
-variant_description:
+variant_description: Netlify • TanStack Start
 # Optionally run one shell command after files are copied into the new project.
 install_command: pnpm install --ignore-workspace
 
