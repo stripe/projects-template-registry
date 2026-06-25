@@ -1,0 +1,54 @@
+guided:
+  # Choose which guided category this template appears under in `init guided`.
+  category: saas
+  # Pick the framework filter key this template should match in guided mode.
+  framework: tanstack-start
+
+# Use one shared template id for all variants of the same starter.
+template: netlify/tanstack-start-saas
+# Give this concrete variant its own stable id.
+variant: teal-otter
+# Set this to `true` for the variant the CLI should recommend first.
+default: true
+# Write the short stack summary shown in the variant picker.
+variant_description:
+# Optionally run one shell command after files are copied into the new project.
+install_command: pnpm install --ignore-workspace
+
+metadata:
+  # Show this human-friendly name in browse results and confirmation cards.
+  name: Netlify SaaS Starter on TanStack Start
+  # Explain in one line what the starter gives the user.
+  description: A starter template for building SaaS products on TanStack Start using Netlify's AI Gateway, Database, Identity service and hosting.
+  # Name the team or person maintaining this template.
+  owner: netlify
+  # Add optional search keywords to improve browse and search results.
+  tags:
+    - tanstack
+    - tanstack start
+    - tanstack ai
+    - netlify
+    - netlify ai gateway
+    - netlify database
+    - netlify identity
+
+# Point to the repo directory the CLI should copy from.
+repo: https://github.com/netlify/stripe-templates/tree/main/tanstack_start_netlify_saas/
+# Pin the exact commit so users get a reproducible template.
+ref: 9138fb3016bb476509c4d36efd6b51a2ed55c3a4
+
+# List the provider services the provisioning pipeline should provision.
+services:
+  - netlify/project
+
+# Optionally list the commands the CLI should print after setup finishes.
+next_steps:
+  # Use a short heading so users know what this command is for.
+  - label: Run locally
+    # Print the exact command the user should run next.
+    command: pnpm dev
+  # Add as many labeled next-step commands as you want.
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product.
+  - label: Deploy
+    command: pnpm deploy
