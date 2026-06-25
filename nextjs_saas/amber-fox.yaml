@@ -6,7 +6,7 @@ variant: amber-fox
 default: true
 variant_description: Vercel • Neon • Clerk
 install_command: npm install
-ref: 84315765f28e9ad2d0b3c7167447edf6f65bcebe
+ref: c36b16a9facfda92cd26c43222e5d65ca1768138
 repo: https://github.com/stripe/projects-templates/tree/main/nextjs_saas_amber-fox
 metadata:
   name: Next.js SaaS Starter
@@ -17,6 +17,8 @@ services:
   - clerk/auth
   - neon/postgres
 next_steps:
+  - label: Set up Stripe products
+    command: npm run setup:stripe
   - label: Run locally
     command: npm run dev
   - label: Build product with Codex
