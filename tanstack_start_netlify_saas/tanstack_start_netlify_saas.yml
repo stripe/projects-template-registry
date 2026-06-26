@@ -13,7 +13,7 @@ default: true
 # Write the short stack summary shown in the variant picker.
 variant_description: Netlify • TanStack Start
 # Optionally run one shell command after files are copied into the new project.
-install_command: pnpm install --ignore-workspace
+install_command: npm install
 
 metadata:
   # Show this human-friendly name in browse results and confirmation cards.
@@ -46,9 +46,9 @@ next_steps:
   # Use a short heading so users know what this command is for.
   - label: Run locally
     # Print the exact command the user should run next.
-    command: pnpm dev
+    command: npm run dev
   # Add as many labeled next-step commands as you want.
   - label: Build product with Codex
     command: codex "Help me turn this into a real product.
   - label: Deploy
-    command: pnpm deploy
+    command: npm run deploy
