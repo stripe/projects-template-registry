@@ -1,0 +1,54 @@
+guided:
+  # Choose which guided category this template appears under in `init guided`.
+  category: one_time_payment
+  # Pick the framework filter key this template should match in guided mode.
+  framework: tanstack-start
+
+# Use one shared template id for all variants of the same starter.
+template: netlify/tanstack-start-ecommerce
+# Give this concrete variant its own stable id.
+variant: slate-heron
+# Set this to `true` for the variant the CLI should recommend first.
+default: true
+# Write the short stack summary shown in the variant picker.
+variant_description: Netlify • TanStack Start
+
+# Optionally run one shell command after files are copied into the new project.
+install_command: npm install
+
+metadata:
+  # Show this human-friendly name in browse results and confirmation cards.
+  name: Netlify eCommerce Starter on TanStack Start
+  # Explain in one line what the starter gives the user.
+  description: A starter template for building an eCommerce storefront on TanStack Start — product listings, detail pages, and search on Netlify, with cart and checkout ready to wire up with Stripe.
+  # Name the team or person maintaining this template.
+  owner: netlify
+  # Add optional search keywords to improve browse and search results.
+  tags:
+    - tanstack
+    - tanstack start
+    - ecommerce
+    - storefront
+    - netlify
+    - netlify identity
+
+# Point to the repo directory the CLI should copy from.
+repo: https://github.com/netlify/stripe-templates/tree/main/tanstack_start_netlify_eCommerce/
+# Pin the exact commit so users get a reproducible template.
+ref: cdfc8db878725cfb724b161faa3e2f3265f1539b
+
+# List the provider services the provisioning pipeline should provision.
+services:
+  - netlify/project
+
+# Optionally list the commands the CLI should print after setup finishes.
+next_steps:
+  # Use a short heading so users know what this command is for.
+  - label: Run locally
+    # Print the exact command the user should run next.
+    command: npm run dev
+  # Add as many labeled next-step commands as you want.
+  - label: Add cart & Stripe checkout with Claude
+    command: claude "Add a cart and Stripe Checkout to this storefront."
+  - label: Deploy
+    command: netlify deploy --build --prod
