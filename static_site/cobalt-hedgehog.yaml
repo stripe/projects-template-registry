@@ -1,0 +1,78 @@
+# Stripe Projects template manifest.
+#
+# Declares the services this template needs and the post-setup steps the CLI
+# surfaces after `stripe projects build`. To list it in the registry, mirror this
+# file into stripe/projects-template-registry at static_site/<variant>.yaml.
+
+guided:
+  category: static_site
+  framework: astro
+
+template: posthog/astro-portfolio-blog
+variant: cobalt-hedgehog
+default: true
+variant_description: PostHog, Algolia, Supabase, Netlify
+install_command: npm install
+repo: https://github.com/PostHog/stripe-projects-astro-static-template/tree/main/.
+ref: 4aab3c785c491e75f295b541f7fb9a97f6540529
+
+metadata:
+  name: Astro Portfolio + Blog
+  description: Personal site with portfolio, blog, analytics, search, contact form, and hosting
+  owner: posthog
+  tags:
+    - Astro
+    - Blog
+    - Portfolio
+    - Static site
+
+services:
+  - posthog/analytics
+  - algolia/application
+  - supabase/project
+  - netlify/project
+
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Create contact form table
+    command: supabase db execute --file supabase/schema.sql
+  - label: Index blog posts
+    command: npm run index
+  - label: Deploy
+    command: npm run deploy
+
+tier_plans:
+  posthog/analytics:
+    free_lowest_cost:
+      plan_service: PostHog/free
+      provider_configuration:
+        region: EU
+    starter_paid:
+      plan_service: PostHog/pay_as_you_go
+      provider_configuration:
+        region: EU
+    higher_scale:
+      plan_service: PostHog/pay_as_you_go
+      provider_configuration:
+        region: EU
+  algolia/application:
+    free_lowest_cost:
+      plan: build
+      region: EU West
+      # This line is required to be present in order for the correct "build" plan to be selected.
+      accept_terms: "By proceeding, you accept the Algolia Build Plan Terms: https://www.algolia.com/policies/build-plan-specific-terms and the product specific Service Limits available at https://www.algolia.com/doc/guides/scaling/algolia-service-limits."
+    starter_paid:
+      plan: grow
+      region: EU West
+      # This line is required to be present in order for the correct "grow" plan to be selected.
+      accept_terms: "By proceeding, you accept the Algolia Grow Plan Terms: https://www.algolia.com/policies/grow-plan-specific-terms and the product specific Service Limits available at https://www.algolia.com/doc/guides/scaling/algolia-service-limits."
+    higher_scale:
+      plan: grow-plus
+      region: EU West
+      # This line is required to be present in order for the correct "grow-plus" plan to be selected.
+      accept_terms: "By proceeding, you accept the Algolia Grow Plus Plan Terms: https://www.algolia.com/policies/grow-plus-plan-specific-terms and the product specific Service Limits available at https://www.algolia.com/doc/guides/scaling/algolia-service-limits."
+  supabase/project:
+    free_lowest_cost: Supabase/free
+    starter_paid: Supabase/pro
+    higher_scale: Supabase/pro
