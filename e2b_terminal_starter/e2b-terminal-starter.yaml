@@ -3,7 +3,7 @@ guided:
   framework: nextjs
 
 template: e2b/terminal-starter
-variant: base
+variant: e2b-terminal-starter
 default: true
 variant_description: Next.js • E2B Sandbox • SQLite
 install_command: pnpm install
