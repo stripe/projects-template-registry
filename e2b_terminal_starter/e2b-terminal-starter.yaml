@@ -1,0 +1,30 @@
+guided:
+  category: developer_tool
+  framework: nextjs
+
+template: e2b/terminal-starter
+variant: e2b-terminal-starter
+default: true
+variant_description: Next.js • E2B Sandbox • SQLite
+install_command: pnpm install
+
+metadata:
+  name: E2B Terminal Starter
+  description: Persistent terminal conversations backed by E2B sandboxes
+  owner: e2b-dev
+  tags:
+    - e2b
+    - sandbox
+    - terminal
+    - nextjs
+    - sqlite
+
+repo: https://github.com/e2b-dev/e2b-terminal-starter
+ref: 37f87021b1d11e80c0cb377d7a6e5b0220e7f736
+
+services:
+  - e2b/sandbox
+
+next_steps:
+  - label: Run locally
+    command: pnpm dev
