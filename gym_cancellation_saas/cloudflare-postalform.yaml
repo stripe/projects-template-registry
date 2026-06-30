@@ -1,0 +1,37 @@
+guided:
+  category: one_time_payment
+  framework: cloudflare-workers
+
+template: postalform/gym-cancellation-saas
+variant: cloudflare-postalform
+default: true
+variant_description: Cloudflare Workers + PostalForm
+install_command: npm install
+
+metadata:
+  name: Gym Cancellation SaaS
+  description: One-time payment app that mails gym cancellation letters with PostalForm
+  owner: postalform
+  tags:
+    - Cloudflare Workers
+    - PostalForm
+    - Stripe Checkout
+    - Mail
+    - One-time payment
+
+repo: https://github.com/postalform/gym-cancellation-saas-template
+ref: c63f8c1a2357d4adab5268486ca4f0896337a7c3
+
+services:
+  - cloudflare/workers
+  - postalform/mail
+
+next_steps:
+  - label: Prepare local env
+    command: npm run setup
+  - label: Run locally
+    command: npm run dev
+  - label: Deploy to Cloudflare Workers
+    command: npm run deploy:cloudflare
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Keep the existing Stripe Checkout, Cloudflare Workers, and PostalForm integrations working."
