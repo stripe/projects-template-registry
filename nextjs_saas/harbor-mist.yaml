@@ -5,7 +5,7 @@ template: stripe/nextjs-saas
 variant: harbor-mist
 default: false
 variant_description: Netlify • Render Postgres • Clerk
-install_command: npm install
+install_command: npm install && npm run setup:stripe
 ref: c36b16a9facfda92cd26c43222e5d65ca1768138
 repo: https://github.com/stripe/projects-templates/tree/main/nextjs_saas_harbor-mist
 metadata:
@@ -17,8 +17,6 @@ services:
   - clerk/auth
   - render/postgres
 next_steps:
-  - label: Set up Stripe products
-    command: npm run setup:stripe
   - label: Run locally
     command: npm run dev
   - label: Build product with Codex
