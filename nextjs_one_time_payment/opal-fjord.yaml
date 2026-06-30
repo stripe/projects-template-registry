@@ -6,7 +6,7 @@ variant: opal-fjord
 default: false
 variant_description: Netlify • Neon • Clerk
 install_command: npm install && npm run setup:stripe
-ref: c36b16a9facfda92cd26c43222e5d65ca1768138
+ref: a65bf3973f1ff2c7f2973bbee02e11e3d29779ad
 repo: https://github.com/stripe/projects-templates/tree/main/nextjs_one_time_payment_opal-fjord
 metadata:
   name: Next.js One-time Payment Netlify Starter
