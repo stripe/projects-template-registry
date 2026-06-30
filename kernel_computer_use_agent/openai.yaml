@@ -1,0 +1,30 @@
+guided:
+  category: developer_tool
+  framework: other
+template: kernel/computer-use-agent
+variant: openai
+default: true
+variant_description: Kernel cloud browser • OpenAI computer use
+install_command: uv sync
+repo: https://github.com/kernel/stripe-projects-templates/tree/main/computer-use-agent
+ref: e789346adcc83aa2c75dac8b3a2b2e927df4d791
+metadata:
+  name: Kernel Computer-Use Agent
+  description: A natural-language computer-use agent that drives a real Kernel cloud browser (needs an OPENAI_API_KEY)
+  owner: kernel
+  tags:
+    - Computer Use
+    - Browser Automation
+    - AI Agent
+    - OpenAI
+    - Kernel
+services:
+  - kernel/project
+next_steps:
+  # OPENAI_API_KEY is not provisioned by Stripe Projects; the developer adds it.
+  - label: Add your OpenAI key to .env
+    command: echo 'OPENAI_API_KEY=sk-...' >> .env
+  - label: Run locally
+    command: uv run run_local.py --task "Open news.ycombinator.com and summarize the top story"
+  - label: Deploy to Kernel
+    command: kernel deploy main.py --env-file .env
