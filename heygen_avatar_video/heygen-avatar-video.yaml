@@ -1,0 +1,34 @@
+guided:
+  category: developer_tool
+  framework: nextjs
+
+template: heygen/avatar-video
+variant: heygen-avatar-video
+default: true
+variant_description: Next.js • HeyGen API • HyperFrames
+install_command: pnpm install
+
+metadata:
+  name: HeyGen Studio
+  description: Turn a script into a branded AI avatar video with synced captions, rendered locally
+  owner: heygen-com
+  tags:
+    - HeyGen
+    - HyperFrames
+    - AI Avatar
+    - Video
+    - Next.js
+
+repo: https://github.com/heygen-com/stripe-projects-templates/tree/main/heygen_avatar_video
+ref: cc383b8e60a8e1c6fe28f9c47a255c6db040f3b9
+
+services:
+  - heygen/api
+
+next_steps:
+  - label: Run locally
+    command: pnpm dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
