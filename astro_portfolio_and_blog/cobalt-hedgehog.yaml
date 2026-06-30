@@ -56,22 +56,6 @@ tier_plans:
       plan_service: PostHog/pay_as_you_go
       provider_configuration:
         region: EU
-  algolia/application:
-    free_lowest_cost:
-      plan: build
-      region: EU West
-      # This line is required to be present in order for the correct "build" plan to be selected.
-      accept_terms: "By proceeding, you accept the Algolia Build Plan Terms: https://www.algolia.com/policies/build-plan-specific-terms and the product specific Service Limits available at https://www.algolia.com/doc/guides/scaling/algolia-service-limits."
-    starter_paid:
-      plan: grow
-      region: EU West
-      # This line is required to be present in order for the correct "grow" plan to be selected.
-      accept_terms: "By proceeding, you accept the Algolia Grow Plan Terms: https://www.algolia.com/policies/grow-plan-specific-terms and the product specific Service Limits available at https://www.algolia.com/doc/guides/scaling/algolia-service-limits."
-    higher_scale:
-      plan: grow-plus
-      region: EU West
-      # This line is required to be present in order for the correct "grow-plus" plan to be selected.
-      accept_terms: "By proceeding, you accept the Algolia Grow Plus Plan Terms: https://www.algolia.com/policies/grow-plus-plan-specific-terms and the product specific Service Limits available at https://www.algolia.com/doc/guides/scaling/algolia-service-limits."
   supabase/project:
     free_lowest_cost: Supabase/free
     starter_paid: Supabase/pro
