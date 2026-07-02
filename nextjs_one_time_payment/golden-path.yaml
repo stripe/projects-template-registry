@@ -4,9 +4,9 @@ guided:
 template: stripe/nextjs-one-time-payment
 variant: golden-path
 default: true
-variant_description: Vercel • Neon • Clerk
+variant_description: Vercel • Neon • Clerk • Twilio
 install_command: npm install && npm run setup:stripe
-ref: bd67b78f7ae052cc04cf26cfd7f37ae2806d78e8
+ref: 3fa897c849a4406569d9bf130b9f7785ac5d199a
 repo: https://github.com/stripe/projects-templates/tree/main/nextjs_one_time_payment_golden-path
 metadata:
   name: Next.js One-time Payment Starter
@@ -17,6 +17,7 @@ services:
   - clerk/auth
   - neon/postgres
   - posthog/analytics
+  - twilio/email
 next_steps:
   - label: Run locally
     command: npm run dev
@@ -52,3 +53,7 @@ tier_plans:
       plan_service: PostHog/pay_as_you_go
       provider_configuration:
         region: US
+  twilio/email:
+    free_lowest_cost: Twilio/hobbyist
+    starter_paid: Twilio/hobbyist
+    higher_scale: Twilio/business
