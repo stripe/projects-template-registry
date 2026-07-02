@@ -1,0 +1,48 @@
+guided:
+  category: saas
+  framework: nextjs
+template: clerk/nextjs-saas
+variant: billing-neon
+default: true
+variant_description: Clerk • Clerk Billing • Neon • Vercel
+install_command: pnpm install
+# Pinned to clerk/stripe-projects-templates@ce57c21 (main).
+ref: ce57c21c40828630d21ef151b2fd5acc9c3c7f09
+repo: https://github.com/clerk/stripe-projects-templates/tree/main/nextjs_saas_billing-neon
+metadata:
+  name: Clerk Next.js SaaS Starter
+  description: Subscription SaaS with Clerk auth, Clerk Billing, Neon, and Vercel
+  owner: clerk
+  tags:
+    - SaaS
+    - Next.js
+    - Auth
+    - Billing
+    - Neon
+    - Postgres
+services:
+  - clerk/auth
+  - neon/postgres
+  - vercel/project
+next_steps:
+  - label: Run locally
+    command: pnpm dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: pnpm run deploy
+tier_plans:
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
