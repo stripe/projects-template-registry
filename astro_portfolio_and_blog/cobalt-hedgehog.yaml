@@ -14,7 +14,7 @@ default: true
 variant_description: PostHog, Algolia, Supabase, Netlify
 install_command: npm install
 repo: https://github.com/PostHog/stripe-projects-astro-static-template/tree/main/.
-ref: 4aab3c785c491e75f295b541f7fb9a97f6540529
+ref: 9b47ca5f6b07bf4089c7ff9b65aa3dc1d680658e
 
 metadata:
   name: Astro Portfolio + Blog
