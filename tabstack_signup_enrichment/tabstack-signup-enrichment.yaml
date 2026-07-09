@@ -1,0 +1,52 @@
+guided:
+  category: developer_tool
+  framework: nextjs
+template: tabstack/signup-enrichment
+variant: tabstack-signup-enrichment
+default: true
+variant_description: Next.js • Clerk • Turso • Tabstack SDK
+install_command: pnpm install
+repo: https://github.com/Mozilla-Ocho/User-Signup-Enrichment/tree/main
+ref: 99f38eda1385fb16ad9f724a55422f5e34c055b3
+metadata:
+  name: Signup Enrichment
+  description: New user signup enrichment with Clerk, Tabstack, and Turso
+  owner: tabstack
+  tags:
+    - Clerk
+    - Turso
+    - Tabstack
+    - Next.js
+    - Onboarding
+services:
+  - clerk/auth
+  - turso/database
+  - tabstack/api
+tier_plans:
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  turso/database:
+    free_lowest_cost:
+      plan_service: Turso/starter
+      configuration:
+        location: aws-us-east-1
+    starter_paid:
+      plan_service: Turso/developer
+      configuration:
+        location: aws-us-east-1
+    higher_scale:
+      plan_service: Turso/scaler
+      configuration:
+        location: aws-us-east-1
+  tabstack/api:
+    free_lowest_cost:
+      plan: trial
+    starter_paid:
+      plan: individual
+    higher_scale:
+      plan: pro
+next_steps:
+  - label: Run locally
+    command: pnpm dev
