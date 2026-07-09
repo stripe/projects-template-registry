@@ -7,7 +7,7 @@ default: true
 variant_description: Next.js • Tabstack SDK
 install_command: pnpm install
 repo: https://github.com/Mozilla-Ocho/Tabstack-Competitor-Brief/tree/main
-ref: 38715611042084558c3d13c2607957377378a2bb
+ref: e0b6c7fa5d4a7a2766d093df2e1d40ae80bbf72e
 metadata:
   name: Competitor Brief
   description: Cited competitive-intelligence brief from two URLs, via Tabstack
