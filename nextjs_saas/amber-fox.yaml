@@ -4,7 +4,7 @@ guided:
 template: stripe/nextjs-saas
 variant: amber-fox
 default: true
-variant_description: Vercel • Neon • Clerk • Twilio
+variant_description: Vercel • Neon • Clerk • Twilio • Posthog
 install_command: npm install && npm run setup:stripe
 ref: 3fa897c849a4406569d9bf130b9f7785ac5d199a
 repo: https://github.com/stripe/projects-templates/tree/main/nextjs_saas_amber-fox
@@ -54,6 +54,6 @@ tier_plans:
       provider_configuration:
         region: US
   twilio/email:
-    free_lowest_cost: Twilio/hobbyist
+    free_lowest_cost: skip
     starter_paid: Twilio/hobbyist
     higher_scale: Twilio/business
