@@ -1,0 +1,50 @@
+guided:
+  # No dedicated auth category exists in guided.yaml yet, so this surfaces
+  # under "Something else" in guided mode.
+  category: auth
+  framework: nextjs
+template: customerio/nextjs-auth
+variant: magic-lantern
+default: true
+variant_description: Better Auth • Neon • Customer.io • Vercel
+install_command: npm install
+# Pinned to andreas-cio/nextjs-auth-customerio@bb43c28 (main).
+ref: bb43c28b1304f9a1798c427dbca79ad15f5664ea
+repo: https://github.com/andreas-cio/nextjs-auth-customerio
+metadata:
+  name: Next.js Passwordless Auth + Customer.io
+  description: Magic-link auth with Better Auth and Neon — every transactional email (sign-in links, welcome) sent through Customer.io
+  owner: customerio
+  tags:
+    - Auth
+    - Email
+    - Next.js
+    - Customer.io
+    - Neon
+    - Passwordless
+services:
+  - customerio/workspace
+  - neon/postgres
+  - vercel/project
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  customerio/workspace:
+    free_lowest_cost: customerio/builder:sandbox
+    starter_paid: customerio/builder
+    higher_scale: customerio/builder
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
