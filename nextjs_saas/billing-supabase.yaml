@@ -1,0 +1,46 @@
+guided:
+  category: saas
+  framework: nextjs
+template: clerk/nextjs-saas
+variant: billing-supabase
+# billing-neon is the recommended (default) variant of clerk/nextjs-saas.
+default: false
+variant_description: Vercel • Supabase • Clerk
+install_command: pnpm install
+# Pinned to clerk/stripe-projects-templates@ce57c21 (main).
+ref: ce57c21c40828630d21ef151b2fd5acc9c3c7f09
+repo: https://github.com/clerk/stripe-projects-templates/tree/main/nextjs_saas_billing-supabase
+metadata:
+  name: Clerk + Supabase Next.js SaaS Starter
+  description: Subscription SaaS with Clerk auth, Clerk Billing, and Supabase (per-user data via Clerk-JWT Row Level Security)
+  owner: clerk
+  tags:
+    - SaaS
+    - Next.js
+    - Auth
+    - Billing
+    - Supabase
+    - RLS
+# Supabase is manual setup — there is no supabase/* Stripe Projects service yet,
+# so only clerk/auth and vercel/project are declared (and auto-provisioned).
+services:
+  - clerk/auth
+  - vercel/project
+next_steps:
+  - label: Run locally
+    command: pnpm dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: pnpm run deploy
+tier_plans:
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
