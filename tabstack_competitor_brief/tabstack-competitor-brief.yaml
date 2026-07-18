@@ -1,0 +1,34 @@
+guided:
+  category: developer_tool
+  framework: nextjs
+template: tabstack/competitor-brief
+variant: tabstack-competitor-brief
+default: true
+variant_description: Next.js • Tabstack SDK
+install_command: pnpm install
+repo: https://github.com/Mozilla-Ocho/Tabstack-Competitor-Brief/tree/main
+ref: e0b6c7fa5d4a7a2766d093df2e1d40ae80bbf72e
+metadata:
+  name: Competitor Brief
+  description: Cited competitive-intelligence brief from two URLs, via Tabstack
+  owner: tabstack
+  tags:
+    - Competitive Intelligence
+    - AI
+    - Next.js
+    - CLI
+services:
+  - tabstack/api
+tier_plans:
+  tabstack/api:
+    free_lowest_cost:
+      plan: trial
+    starter_paid:
+      plan: individual
+    higher_scale:
+      plan: pro
+next_steps:
+  - label: Run locally
+    command: pnpm dev
+  - label: Run the CLI brief
+    command: pnpm brief https://you.com https://competitor.com
