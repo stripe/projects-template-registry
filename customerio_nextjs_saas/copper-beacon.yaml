@@ -1,34 +1,38 @@
+# Registry manifest for stripe/projects-template-registry.
+# The copy of record lives in the registry; this in-repo copy mirrors it.
 guided:
-  # No dedicated auth category exists in guided.yaml yet, so this surfaces
-  # under "Something else" in guided mode.
-  category: auth
+  category: saas
   framework: nextjs
-template: customerio/nextjs-auth
-variant: magic-lantern
+template: customerio/nextjs-saas
+variant: copper-beacon
 default: true
-variant_description: Better Auth • Neon • Customer.io • Vercel
+variant_description: Clerk • Neon • Stripe Billing • Customer.io • Vercel
 install_command: npm install
-# Pinned to andreas-cio/nextjs-auth-customerio@23ad812 (main).
-ref: 23ad8127e06db3572bc0dbb9a4bf02d6ac469d7d
-repo: https://github.com/andreas-cio/001_nextjs-auth-customerio
+# Pinned commit — update after pushing.
+ref: f2a41eda420f2c6054b5f3ea083dc3546274453b
+repo: https://github.com/andreas-cio/003_nextjs-saas-customerio
 metadata:
-  name: Next.js Passwordless Auth + Customer.io
-  description: Magic-link auth with Better Auth and Neon — every transactional email (sign-in links, welcome) sent through Customer.io
+  name: Next.js SaaS + Customer.io Lifecycle Email
+  description: Subscription SaaS with Clerk auth, Neon, and Stripe billing — welcome, confirmation, and payment-failure emails sent through Customer.io
   owner: customerio
   tags:
-    - Auth
+    - SaaS
+    - Billing
     - Email
     - Next.js
     - Customer.io
+    - Clerk
     - Neon
-    - Passwordless
 services:
   - customerio/workspace
+  - Clerk/auth
   - neon/postgres
   - vercel/project
 next_steps:
   - label: Run locally
     command: npm run dev
+  - label: Set up billing
+    command: npm run setup:stripe
   - label: Build product with Claude
     command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
   - label: Build product with Codex
@@ -40,6 +44,10 @@ tier_plans:
     free_lowest_cost: customerio/builder:sandbox
     starter_paid: customerio/builder
     higher_scale: customerio/builder
+  Clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
   neon/postgres:
     free_lowest_cost: Neon/free
     starter_paid: Neon/launch
