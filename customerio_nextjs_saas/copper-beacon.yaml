@@ -1,0 +1,58 @@
+# Registry manifest for stripe/projects-template-registry.
+# The copy of record lives in the registry; this in-repo copy mirrors it.
+guided:
+  category: saas
+  framework: nextjs
+template: customerio/nextjs-saas
+variant: copper-beacon
+default: true
+variant_description: Clerk • Neon • Stripe Billing • Customer.io • Vercel
+install_command: npm install
+# Pinned commit — update after pushing.
+ref: f2a41eda420f2c6054b5f3ea083dc3546274453b
+repo: https://github.com/andreas-cio/003_nextjs-saas-customerio
+metadata:
+  name: Next.js SaaS + Customer.io Lifecycle Email
+  description: Subscription SaaS with Clerk auth, Neon, and Stripe billing — welcome, confirmation, and payment-failure emails sent through Customer.io
+  owner: customerio
+  tags:
+    - SaaS
+    - Billing
+    - Email
+    - Next.js
+    - Customer.io
+    - Clerk
+    - Neon
+services:
+  - customerio/workspace
+  - Clerk/auth
+  - neon/postgres
+  - vercel/project
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Set up billing
+    command: npm run setup:stripe
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  customerio/workspace:
+    free_lowest_cost: customerio/builder:sandbox
+    starter_paid: customerio/builder
+    higher_scale: customerio/builder
+  Clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
