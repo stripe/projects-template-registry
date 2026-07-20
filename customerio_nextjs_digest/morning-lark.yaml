@@ -1,0 +1,61 @@
+# Registry manifest for stripe/projects-template-registry.
+# The copy of record lives in the registry; this in-repo copy mirrors it
+# (same convention as stripe/projects-templates).
+#
+# NOTE: Inngest/app provisioning requires --config '{"id":"..."}' — the app
+# id must be "cio-digest-starter" to match lib/inngest.ts.
+guided:
+  category: saas
+  framework: nextjs
+template: customerio/nextjs-digest
+variant: morning-lark
+default: true
+variant_description: Inngest • Customer.io • Neon • Vercel
+install_command: npm install
+# Pinned commit — update after pushing.
+ref: d93c71978d920ee8d75ba981cd952c3d3be6dfbc
+repo: https://github.com/andreas-cio/004_nextjs-digest-customerio
+metadata:
+  name: Next.js Weekly Digest + Customer.io
+  description: Durable weekly digest emails — Inngest cron workflows with step-level retries, every message delivered through Customer.io
+  owner: customerio
+  tags:
+    - Email
+    - Workflows
+    - Inngest
+    - Next.js
+    - Customer.io
+    - Digest
+services:
+  - customerio/workspace
+  - Inngest/app
+  - neon/postgres
+  - vercel/project
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Start Inngest dev server
+    command: npx inngest-cli@latest dev
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  customerio/workspace:
+    free_lowest_cost: customerio/builder:sandbox
+    starter_paid: customerio/builder
+    higher_scale: customerio/builder
+  Inngest/app:
+    free_lowest_cost: Inngest/hobby
+    starter_paid: Inngest/pro
+    higher_scale: Inngest/pro
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
