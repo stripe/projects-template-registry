@@ -1,0 +1,57 @@
+# Registry manifest for stripe/projects-template-registry.
+# The copy of record lives in the registry; this in-repo copy mirrors it
+# (same convention as stripe/projects-templates).
+guided:
+  category: saas
+  framework: nextjs
+template: customerio/nextjs-ai-chat
+variant: ember-glow
+default: true
+variant_description: OpenRouter • Supabase • Customer.io • Vercel
+install_command: npm install
+# Pinned commit — update after pushing.
+ref: b65e671c3bea5c400d529248e71ffb8e7c71e9ad
+repo: https://github.com/andreas-cio/002_nextjs-ai-chat-customerio
+metadata:
+  name: AI Chat + Customer.io Starter
+  description: Streaming AI chat on OpenRouter behind passwordless auth — every transactional email (sign-in links, welcome) sent through Customer.io
+  owner: customerio
+  tags:
+    - AI
+    - Chat
+    - OpenRouter
+    - Email
+    - Next.js
+    - Customer.io
+    - Supabase
+services:
+  - customerio/workspace
+  - Supabase/project
+  - OpenRouter/api
+  - vercel/project
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  customerio/workspace:
+    free_lowest_cost: customerio/builder:sandbox
+    starter_paid: customerio/builder
+    higher_scale: customerio/builder
+  Supabase/project:
+    free_lowest_cost: Supabase/free
+    starter_paid: Supabase/pro
+    higher_scale: Supabase/pro
+  OpenRouter/api:
+    free_lowest_cost: OpenRouter/free
+    starter_paid: OpenRouter/pay_as_you_go
+    higher_scale: OpenRouter/pay_as_you_go
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
