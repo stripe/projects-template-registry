@@ -8,9 +8,9 @@ variant: magic-lantern
 default: true
 variant_description: Better Auth • Neon • Customer.io • Vercel
 install_command: npm install
-# Pinned to andreas-cio/nextjs-auth-customerio@bb43c28 (main).
-ref: bb43c28b1304f9a1798c427dbca79ad15f5664ea
-repo: https://github.com/andreas-cio/nextjs-auth-customerio
+# Pinned to andreas-cio/nextjs-auth-customerio@23ad812 (main).
+ref: 23ad8127e06db3572bc0dbb9a4bf02d6ac469d7d
+repo: https://github.com/andreas-cio/001_nextjs-auth-customerio
 metadata:
   name: Next.js Passwordless Auth + Customer.io
   description: Magic-link auth with Better Auth and Neon — every transactional email (sign-in links, welcome) sent through Customer.io
