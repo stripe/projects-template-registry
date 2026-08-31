@@ -1,0 +1,64 @@
+guided:
+  category: ai_agent
+  framework: other
+
+template: shopify/trending-products
+variant: shopify-trending-products
+default: true
+variant_description: Shopify • Firecrawl • OpenRouter • Spaceship
+
+repo: https://github.com/Shopify/trending-products/tree/main/
+ref: 6afb38fe1f5584a6a9db9ba184fb9bbc150943e6
+
+metadata:
+  name: Shopify Trending Products
+  description: Prompt-first workflow for researching trending products and launching a Shopify store
+  owner: Shopify
+  tags:
+    - Shopify
+    - E-commerce
+    - Trend research
+    - AI
+    - Firecrawl
+    - OpenRouter
+    - Domains
+
+services:
+  - shopify/store
+  - firecrawl/api
+  - openrouter/api
+
+next_steps:
+  - label: Launch with Codex
+    command: codex "Launch my Shopify trend store. Follow SKILL.md."
+  - label: Launch with Claude
+    command: claude "Launch my Shopify trend store. Follow SKILL.md."
+
+tier_plans:
+  shopify/store:
+    free_lowest_cost:
+      plan_service: Shopify/store
+      provider_configuration:
+        plan: trial
+    starter_paid:
+      plan_service: Shopify/store
+      provider_configuration:
+        plan: basic
+    higher_scale:
+      plan_service: Shopify/store
+      provider_configuration:
+        plan: grow
+  firecrawl/api:
+    free_lowest_cost: Firecrawl/free
+    starter_paid:
+      plan_service: Firecrawl/hobby
+      provider_configuration:
+        interval: Monthly
+    higher_scale:
+      plan_service: Firecrawl/standard
+      provider_configuration:
+        interval: Monthly
+  openrouter/api:
+    free_lowest_cost: OpenRouter/free
+    starter_paid: OpenRouter/pay_as_you_go
+    higher_scale: OpenRouter/pay_as_you_go
