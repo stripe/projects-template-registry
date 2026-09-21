@@ -1,0 +1,58 @@
+# Second variant of the build template: Stripe Projects also provisions the
+# Supabase database. It is NOT the default because the Supabase provider can
+# only create a brand-new project (no reuse of an existing one, no dedicated
+# schema); the default variant (projects-template.yaml) lets `npm run setup`
+# connect a Supabase project of your choosing instead.
+#
+#   stripe projects build my-app --template bensontrent/stripe-app-nextjs-backend/supabase-vercel
+#
+# In the registry this file becomes stripe_app_backend/supabase-vercel.yaml.
+
+guided:
+  category: stripe_app
+  framework: nextjs
+
+template: bensontrent/stripe-app-nextjs-backend
+variant: supabase-vercel
+default: false
+variant_description: Vercel • Supabase (new project) • Better Auth
+install_command: npm install
+
+repo: https://github.com/bensontrent/stripe-apps-community-examples/tree/main/stripe-app-nextjs-backend
+ref: 1ce2e22bf9040ede3a0372a4a33b237a75684906
+
+metadata:
+  name: Stripe App Backend (Next.js)
+  description: Next.js backend for a Stripe App — signed requests from the Dashboard, user login, Better Auth sessions, Supabase Postgres and Stripe webhooks
+  owner: bensontrent
+  tags:
+    - Stripe Apps
+    - Next.js
+    - Supabase
+    - Better Auth
+    - Vercel
+    - Backend
+
+services:
+  - supabase/project
+  - vercel/project
+
+next_steps:
+  - label: Generate secrets, pick up your Stripe test key and create the database tables
+    command: npm run setup
+  - label: Run locally
+    command: npm run dev
+  - label: Get the Stripe App UI extension that talks to this backend
+    command: git clone https://github.com/bensontrent/stripe-app-community-example.git stripe-app
+  - label: Deploy to Vercel
+    command: npm run deploy
+
+tier_plans:
+  supabase/project:
+    free_lowest_cost: Supabase/free
+    starter_paid: Supabase/pro
+    higher_scale: Supabase/pro
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
