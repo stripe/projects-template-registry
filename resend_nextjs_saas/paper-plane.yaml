@@ -10,7 +10,7 @@ ref: 6064327bdaa47bd71c1f4cd47d95b7702d59c0f4
 repo: https://github.com/resend/stripe-projects-templates/tree/main/nextjs_saas_paper-plane
 metadata:
   name: Next.js SaaS + Resend
-  description: Subscription SaaS with Clerk auth, Neon, and Stripe billing. The welcome email goes out through Resend.
+  description: Subscription SaaS with Clerk auth, Neon Postgres, Stripe billing, and Resend email
   owner: resend
   tags:
     - Email
