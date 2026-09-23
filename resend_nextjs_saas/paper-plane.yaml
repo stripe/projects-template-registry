@@ -1,0 +1,66 @@
+guided:
+  category: saas
+  framework: nextjs
+template: resend/nextjs-saas
+variant: paper-plane
+default: true
+variant_description: Vercel • Neon • Clerk • Resend • PostHog
+install_command: npm install && npm run setup:stripe
+ref: 6064327bdaa47bd71c1f4cd47d95b7702d59c0f4
+repo: https://github.com/resend/stripe-projects-templates/tree/main/nextjs_saas_paper-plane
+metadata:
+  name: Next.js SaaS + Resend
+  description: Subscription SaaS with Clerk auth, Neon, and Stripe billing. The welcome email goes out through Resend.
+  owner: resend
+  tags:
+    - Email
+    - SaaS
+    - Next.js
+    - Resend
+    - Clerk
+    - Neon
+services:
+  - vercel/project
+  - clerk/auth
+  - neon/postgres
+  - posthog/analytics
+  - resend/email
+next_steps:
+  - label: Run locally
+    command: npm run dev
+  - label: Build product with Codex
+    command: codex "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Build product with Claude
+    command: claude "Help me turn this into a real product. Follow prompts/starter-to-product.md."
+  - label: Deploy
+    command: npm run deploy
+tier_plans:
+  vercel/project:
+    free_lowest_cost: Vercel/hobby
+    starter_paid: Vercel/pro
+    higher_scale: Vercel/pro
+  clerk/auth:
+    free_lowest_cost: Clerk/hobby
+    starter_paid: Clerk/pro
+    higher_scale: Clerk/pro
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
+  posthog/analytics:
+    free_lowest_cost:
+      plan_service: PostHog/free
+      provider_configuration:
+        region: US
+    starter_paid:
+      plan_service: PostHog/pay_as_you_go
+      provider_configuration:
+        region: US
+    higher_scale:
+      plan_service: PostHog/pay_as_you_go
+      provider_configuration:
+        region: US
+  resend/email:
+    free_lowest_cost: resend/free
+    starter_paid: resend/pro
+    higher_scale: resend/pro
