@@ -1,0 +1,45 @@
+guided:
+  category: saas
+  framework: other
+
+template: level09/readykit
+variant: neon
+default: true
+variant_description: Flask • Neon • Stripe Billing
+install_command: uv sync --extra dev
+
+metadata:
+  name: ReadyKit
+  description: Multi-tenant Flask SaaS with workspaces, teams, 2FA, and Stripe subscriptions
+  owner: level09
+  tags:
+    - SaaS
+    - Billing
+    - Python
+    - Flask
+
+repo: https://github.com/level09/readykit
+ref: c1243253771e06b9ea7a477434c3bef438444218
+
+services:
+  - neon/postgres
+
+next_steps:
+  - label: Configure the app (keeps the Neon connection)
+    command: ./setup.sh --yes
+  - label: Create database and admin
+    command: uv run flask create-db && uv run flask install
+  - label: Set a sandbox sk_test_ STRIPE_SECRET_KEY in .env, then configure test billing
+    command: uv run flask stripe-setup && uv run python checks.py --config --billing
+  - label: Run locally on port 5050
+    command: uv run flask run
+  - label: Forward test webhooks (another terminal)
+    command: uv run flask stripe-listen
+  - label: Build product with Claude
+    command: claude "Read AGENTS.md and help me turn this into a real product."
+
+tier_plans:
+  neon/postgres:
+    free_lowest_cost: Neon/free
+    starter_paid: Neon/launch
+    higher_scale: Neon/launch
